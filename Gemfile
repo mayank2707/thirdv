@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails'
 
-gem 'pg'
+gem 'sqlite3'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'thin'
