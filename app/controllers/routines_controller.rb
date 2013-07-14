@@ -29,10 +29,11 @@ class RoutinesController < ApplicationController
     @weight = ex_type.try(:max_weight) || 0.0
     @unit = ex_type.try(:unit) || "lbs"
     unless ex_type
-      render :edit, alert: "Please save max weight before updating your actual routine"
+      redirect_to edit_routine_path(@exercise), alert: "Please save max weight before updating your actual routine"
+      return
     end
     ex_type.update_performance(params)
     @schedule = CalculateSchedule.new @weight.to_f, current_user, @exercise
-    render :edit
+    redirect_to edit_routine_path(@exercise), notice: "Updates saved"
   end
 end

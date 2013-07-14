@@ -127,16 +127,16 @@ class CalculateSchedule
   end
 
   def find_weight week, set
-    find_performance(week,set).try(:weight)
+    find_performance(week,set).try(:weight) || 0.0
   end
 
   def find_rep week, set
-    find_performance(week,set).try(:repetitions)
+    find_performance(week,set).try(:repetitions) || 0
   end
 
   def find_performance week, set
     week_and_set = week.to_s + set.to_s
     exercise = @user.exercises.find_by_exercise_type @exercise_type
-    exercise.performances.where(week_set: week_and_set).first
+    exercise.performances.where(week_set: week_and_set).first if exercise
   end
 end
