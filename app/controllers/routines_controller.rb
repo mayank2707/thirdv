@@ -6,7 +6,7 @@ class RoutinesController < ApplicationController
     ex_type = current_user.exercises.find_by_exercise_type(@exercise)
     @weight = ex_type.try(:max_weight) || 0.0
     @unit = ex_type.try(:unit) || "lbs"
-    @schedule = CalculateSchedule.new @weight.to_f
+    @schedule = CalculateSchedule.new @weight.to_f, current_user, @exercise
   end
 
   def update
@@ -19,7 +19,20 @@ class RoutinesController < ApplicationController
 
     @weight = ex_type.max_weight
     @unit = ex_type.unit
-    @schedule = CalculateSchedule.new @weight.to_f
+    @schedule = CalculateSchedule.new @weight.to_f, current_user, @exercise
+    render :edit
+  end
+
+  def update_performance
+    @exercise = params.fetch(:id)
+    ex_type = current_user.exercises.find_by_exercise_type(@exercise)
+    @weight = ex_type.try(:max_weight) || 0.0
+    @unit = ex_type.try(:unit) || "lbs"
+    unless ex_type
+      render :edit, alert: "Please save max weight before updating your actual routine"
+    end
+    ex_type.update_performance(params)
+    @schedule = CalculateSchedule.new @weight.to_f, current_user, @exercise
     render :edit
   end
 end

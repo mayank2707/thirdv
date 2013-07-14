@@ -5,7 +5,11 @@ WeightTraining::Application.routes.draw do
 
   resources :user_sessions, as: :user_sessions
   resources :users, as: :users
-  resources :routines
+  resources :routines do
+    member do
+      put 'update_performance'
+    end
+  end
     
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
