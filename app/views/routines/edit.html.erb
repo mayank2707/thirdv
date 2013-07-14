@@ -1,0 +1,40 @@
+<h1><%= @exercise.humanize %></h1>
+<hr>
+<%= form_tag routines_path, class: "form-search" do %>
+  <%= text_field_tag :weight, @weight, class: "input-small" %>
+  <%= select_tag :unit, "<option>lbs</option><option>kg</option".html_safe, class: "input-small" %>
+  <%= submit_tag :Calculate, class: "btn btn-primary" -%>
+<% end -%>
+<hr>
+<table class="table table-bordered table-striped">
+  <thead>
+    <th></th>
+    <th>Week 1</th>
+    <th>Week 2</th>
+    <th>Week 3</th>
+    <th>Week 4</th>
+  </thead>
+  <tbody>
+  <tr>
+    <td>Set 1</td>
+    <td><%= "#{@schedule.week1[0]} " + @unit %></td>
+    <td><%= "#{@schedule.week2[0]} " + @unit %></td>
+    <td><%= "#{@schedule.week3[0]} " + @unit %></td>
+    <td><%= "#{@schedule.week4[0]} " + @unit %></td>
+  </tr>
+  <tr>
+    <td>Set 2</td>
+    <td><%= "#{@schedule.week1[1]} " + @unit %></td>
+    <td><%= "#{@schedule.week2[1]} " + @unit %></td>
+    <td><%= "#{@schedule.week3[1]} " + @unit %></td>
+    <td><%= "#{@schedule.week4[1]} " + @unit %></td>
+  </tr>
+  <tr>
+    <td>Set 3</td>
+    <td><%= "#{@schedule.week1[2]} " + @unit %></td>
+    <td><%= "#{@schedule.week2[2]} " + @unit %></td>
+    <td><%= "#{@schedule.week3[2]} " + @unit %></td>
+    <td><%= "#{@schedule.week4[2]} " + @unit %></td>
+  </tr>
+  </tbody>
+</table>

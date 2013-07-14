@@ -5,6 +5,7 @@ WeightTraining::Application.routes.draw do
 
   resources :user_sessions, as: :user_sessions
   resources :users, as: :users
+  resources :routines
     
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout

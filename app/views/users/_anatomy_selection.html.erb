@@ -10,7 +10,7 @@
         <a id="close-panel" href="#"style="color:#FFF; padding-bottom:20px; font:Arial, Helvetica, sans-serif; font-size:10px;">Close</a>
     </p>
 <h3>Legs Exercises</h3>
-    <ul><li><a href="#">Squats</a></li><li><a href="#">Deadlifts</a></li><li><a href="#">Leg Press</a></li><li><a href="#">Posterior Chain</a></li></ul>
+<ul><li><%= link_to 'Squats', edit_routine_path(:squats) %></li><li><%= link_to 'Deadlifts', edit_routine_path(:dead_lifts) %></li><li><%= link_to "Leg Press", edit_routine_path(:leg_press) %></li><li><%= link_to 'Posterior Chain', edit_routine_path(:posterior_chain) %></li></ul>
     
 </div><!-- /lightbox-panel -->
 
@@ -21,7 +21,7 @@
         <a id="close-panel_chest_menu" href="#" style="color:#FFF; padding-bottom:20px; font:Arial, Helvetica, sans-serif; font-size:10px;">Close</a>
   </p>
     <h3>Chest Exercises</h3>
-    <ul><li><a href="#">Bench Press</a></li><li><a href="#">Incline press</a></li></ul>
+    <ul><li><%= link_to 'Bench Press', edit_routine_path(:bench_press) %></li><li><%= link_to 'Incline Press', edit_routine_path(:incline_press) %></li></ul>
    
 </div><!-- /lightbox-panel -->
 
