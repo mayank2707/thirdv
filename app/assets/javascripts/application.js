@@ -25,3 +25,30 @@ $(document).ready(function(){
     "aaSorting": [[ 5, "desc" ]]
   });
 });
+
+$(document).ready(function(){
+ $("#image_map a#link1").click(function(){
+    $("#lightbox, #lightbox-panel").fadeIn(300);
+ })
+ $("a#close-panel").click(function(){
+     $("#lightbox, #lightbox-panel").fadeOut(300);
+ })
+})
+
+$(document).ready(function(){
+ $("#image_map a#link3").click(function(){
+    $("#lightbox, #lightbox-panel").fadeIn(300);
+ })
+ $("a#close-panel").click(function(){
+     $("#lightbox, #lightbox-panel").fadeOut(300);
+ })
+})
+
+$(document).ready(function(){
+ $("#image_map a#link2").click(function(){
+    $("#lightbox1, #lightbox-panel_chest").fadeIn(300);
+ })
+ $("a#close-panel_chest_menu").click(function(){
+     $("#lightbox1, #lightbox-panel_chest").fadeOut(300);
+ })
+})
