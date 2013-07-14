@@ -4,7 +4,7 @@ class RoutinesController < ApplicationController
   def edit
     @exercise = params.fetch(:id)
     ex_type = current_user.exercises.find_by_exercise_type(@exercise)
-    @weight = ex_type.try(:max_weight) || 5
+    @weight = ex_type.try(:max_weight) || 0.0
     @unit = ex_type.try(:unit) || "lbs"
     @schedule = CalculateSchedule.new @weight.to_f
   end
