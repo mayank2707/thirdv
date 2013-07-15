@@ -1,28 +1,12 @@
-<div id="body_wrapper" align="center">
-<div id="image_map" align="center"><a href="#" id="link2" class="menu" title="Chest"></a>
-<a id="link1" title="Leg"></a>
-<a href="#" id="link3" class="menu" title="Leg"></a>	
-</div> 
-</div>
-
-<div id="lightbox-panel">
-    <p align="right">
-        <a id="close-panel" href="#"style="color:#FFF; padding-bottom:20px; font:Arial, Helvetica, sans-serif; font-size:10px;">Close</a>
-    </p>
-<h3>Legs Exercises</h3>
-<ul><li><%= link_to 'Squats', edit_routine_path(:squats) %></li><li><%= link_to 'Deadlifts', edit_routine_path(:dead_lifts) %></li><li><%= link_to "Leg Press", edit_routine_path(:leg_press) %></li><li><%= link_to 'Posterior Chain', edit_routine_path(:posterior_chain) %></li></ul>
-    
-</div><!-- /lightbox-panel -->
-
-<div id="lightbox"> </div><!-- /lightbox -->
-
-<div id="lightbox-panel_chest">
- <p align="right">
-        <a id="close-panel_chest_menu" href="#" style="color:#FFF; padding-bottom:20px; font:Arial, Helvetica, sans-serif; font-size:10px;">Close</a>
-  </p>
-    <h3>Chest Exercises</h3>
-    <ul><li><%= link_to 'Bench Press', edit_routine_path(:bench_press) %></li><li><%= link_to 'Incline Press', edit_routine_path(:incline_press) %></li></ul>
+<h3>Leg Exercises</h3>
+<ul>
+  <li><%= link_to 'Squats', edit_routine_path(:squats) %></li><li><%= link_to 'Deadlifts', edit_routine_path(:dead_lifts) %></li>
+  <li><%= link_to "Leg Press", edit_routine_path(:leg_press) %></li><li><%= link_to 'Posterior Chain', edit_routine_path(:posterior_chain) %></li>
+</ul>
+      
+<h3>Chest Exercises</h3>
+<ul>
+  <li><%= link_to 'Bench Press', edit_routine_path(:bench_press) %></li>
+  <li><%= link_to 'Incline Press', edit_routine_path(:incline_press) %></li>
+</ul>
    
-</div><!-- /lightbox-panel -->
-
-<div id="lightbox1"> </div><!-- /lightbox -->
