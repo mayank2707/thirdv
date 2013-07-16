@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
+
 gem 'rails'
 gem 'jquery-rails'
 gem 'simple_form'
