@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails'
-
-gem 'sqlite3'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'thin'
@@ -19,21 +17,10 @@ group :assets do
   gem 'therubyracer', :platforms => :ruby
 end
 
-group :test do
-  gem 'spork'
-  gem 'faker'
-  gem 'capybara'
-  gem 'launchy'
-  gem 'factory_girl_rails'
-  gem 'database_cleaner'
+group :development, :test do
+  gem 'sqlite3'
 end
 
-group :development, :test do
-  gem 'rspec-rails'
-  gem 'guard-rspec'
-  gem 'rb-inotify', :require => false
-  gem 'libnotify' if RUBY_PLATFORM =~ /linux/i
-  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
-  gem 'growl' if RUBY_PLATFORM =~ /darwin/i
-  gem 'annotate'
+group :production do
+  gem 'pg'
 end
