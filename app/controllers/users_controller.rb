@@ -41,6 +41,8 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    #Dirty hack
+    params[:user][:password_confirmation] = params[:user][:password]
     @user = User.new(params[:user])
     if @user.save
       reset_session
