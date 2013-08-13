@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessible :username, :email, :password, :password_confirmation, :authentications_attributes
-  validates_presence_of :email
+  validates_presence_of :email, unless: 'external?'
   validates_uniqueness_of :email
 
   authenticates_with_sorcery! do |config|
