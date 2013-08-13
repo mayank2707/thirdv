@@ -8,8 +8,8 @@ WeightTraining::Application.configure do
     address:              'smtp.gmail.com',
     port:                 587,
     domain:               'example.com',
-    user_name:            ENV.fetch("GMAIL_USERNAME"),
-    password:             ENV.fetch("GMAIL_PASSWORD"),
+    # user_name:            ENV.fetch("GMAIL_USERNAME"),
+    # password:             ENV.fetch("GMAIL_PASSWORD"),
     authentication:       'plain',
     enable_starttls_auto: true  }
     config.cache_classes = false
@@ -43,5 +43,5 @@ WeightTraining::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  config.action_mailer.default_url_options = { host: ENV.fetch('HOST_URL')}
+  # config.action_mailer.default_url_options = { host: ENV.fetch('HOST_URL')}
 end

@@ -1,10 +1,13 @@
 class User < ActiveRecord::Base
-  authenticates_with_sorcery!
-  attr_accessible :username, :email, :password, :password_confirmation
-  validates_length_of :password, :minimum => 1, :message => "password must be at least 1 characters long", :if => :password
-  validates_confirmation_of :password, :message => "should match confirmation", :if => :password
+  attr_accessible :username, :email, :password, :password_confirmation, :authentications_attributes
+  validates_presence_of :email
   validates_uniqueness_of :email
 
-  has_many :exercises
+  authenticates_with_sorcery! do |config|
+    config.authentications_class = Authentication
+  end
 
+  has_many :authentications, dependent: :destroy
+  accepts_nested_attributes_for :authentications
+  has_many :exercises
 end
