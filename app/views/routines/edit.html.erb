@@ -8,89 +8,91 @@
 <% end -%>
 <%= form_tag update_performance_routine_path(@exercise), method: :put, class: "form-search" do %>
   <hr>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <th></th>
-      <th>Week 1</th>
-      <th>Actual</th>
-      <th>Week 2</th>
-      <th>Actual</th>
-      <th>Week 3</th>
-      <th>Actual</th>
-      <th>Week 4</th>
-      <th>Actual</th>
-    </thead>
-    <tbody>
-    <tr>
-      <td>Set 1</td>
-      <td><%= "#{@schedule.try(:week1)[0][:expected]} " + @unit %> x 5</td>
-      <td>
-        <%= text_field_tag :week1set1_weight, @schedule.try(:week1)[0][:actual][:weight], class: "input-mini" %> X
-        <%= text_field_tag :week1set1_rep, @schedule.try(:week1)[0][:actual][:rep], class: "input-mini" %>
-      </td>
-      <td><%= "#{@schedule.try(:week2)[0][:expected]} " + @unit %> x 3</td>
-      <td>
-        <%= text_field_tag :week2set1_weight, @schedule.try(:week2)[0][:actual][:weight], class: "input-mini" %> X
-        <%= text_field_tag :week2set1_rep, @schedule.try(:week2)[0][:actual][:rep], class: "input-mini" %>
-      </td>
-      <td><%= "#{@schedule.try(:week3)[0][:expected]} " + @unit %> x 5</td>
-      <td>
-        <%= text_field_tag :week3set1_weight, @schedule.try(:week3)[0][:actual][:weight], class: "input-mini" %> X
-        <%= text_field_tag :week3set1_rep, @schedule.try(:week3)[0][:actual][:rep], class: "input-mini" %>
-      </td>
-      <td><%= "#{@schedule.try(:week4)[0][:expected]} " + @unit %> x 5</td>
-      <td>
-        <%= text_field_tag :week4set1_weight, @schedule.try(:week4)[0][:actual][:weight], class: "input-mini" %> X
-        <%= text_field_tag :week4set1_rep, @schedule.try(:week4)[0][:actual][:rep], class: "input-mini" %>
-      </td>
-    </tr>
-    <tr>
-      <td>Set 2</td>
-      <td><%= "#{@schedule.try(:week1)[1][:expected]} " + @unit %> x 5</td>
-      <td>
-        <%= text_field_tag :week1set2_weight, @schedule.try(:week1)[1][:actual][:weight], class: "input-mini" %> X
-        <%= text_field_tag :week1set2_rep, @schedule.try(:week1)[1][:actual][:rep], class: "input-mini" %>
-      </td>
-      <td><%= "#{@schedule.try(:week2)[1][:expected]} " + @unit %> x 3</td>
-      <td>
-        <%= text_field_tag :week2set2_weight, @schedule.try(:week2)[1][:actual][:weight], class: "input-mini" %> X
-        <%= text_field_tag :week2set2_rep, @schedule.try(:week2)[1][:actual][:rep], class: "input-mini" %>
-      </td>
-      <td><%= "#{@schedule.try(:week3)[1][:expected]} " + @unit %> x 3</td>
-      <td>
-        <%= text_field_tag :week3set2_weight, @schedule.try(:week3)[1][:actual][:weight], class: "input-mini" %> X
-        <%= text_field_tag :week3set2_rep, @schedule.try(:week3)[1][:actual][:rep], class: "input-mini" %>
-      </td>
-      <td><%= "#{@schedule.try(:week4)[1][:expected]} " + @unit %> x 5</td>
-      <td>
-        <%= text_field_tag :week4set2_weight, @schedule.try(:week4)[1][:actual][:weight], class: "input-mini" %> X
-        <%= text_field_tag :week4set2_rep, @schedule.try(:week4)[1][:actual][:rep], class: "input-mini" %>
-      </td>
-    </tr>
-    <tr>
-      <td>Set 3</td>
-      <td><%= "#{@schedule.try(:week1)[2][:expected]} " + @unit %> x 5+</td>
-      <td>
-        <%= text_field_tag :week1set3_weight, @schedule.try(:week1)[2][:actual][:weight], class: "input-mini" %> X
-        <%= text_field_tag :week1set3_rep, @schedule.try(:week1)[2][:actual][:rep], class: "input-mini" %>
-      </td>
-      <td><%= "#{@schedule.try(:week2)[2][:expected]} " + @unit %> x 3+</td>
-      <td>
-        <%= text_field_tag :week2set3_weight, @schedule.try(:week2)[2][:actual][:weight], class: "input-mini" %> X
-        <%= text_field_tag :week2set3_rep, @schedule.try(:week2)[2][:actual][:rep], class: "input-mini" %>
-      </td>
-      <td><%= "#{@schedule.try(:week3)[2][:expected]} " + @unit %> x 1+</td>
-      <td>
-        <%= text_field_tag :week3set3_weight, @schedule.try(:week3)[2][:actual][:weight], class: "input-mini" %> X
-        <%= text_field_tag :week3set3_rep, @schedule.try(:week3)[2][:actual][:rep], class: "input-mini" %>
-      </td>
-      <td><%= "#{@schedule.try(:week4)[2][:expected]} " + @unit %> x 5</td>
-      <td>
-        <%= text_field_tag :week4set3_weight, @schedule.try(:week4)[2][:actual][:weight], class: "input-mini" %> X
-        <%= text_field_tag :week4set3_rep, @schedule.try(:week4)[2][:actual][:rep], class: "input-mini" %>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped table-condensed">
+      <thead>
+        <th></th>
+        <th>Week 1</th>
+        <th>Actual</th>
+        <th>Week 2</th>
+        <th>Actual</th>
+        <th>Week 3</th>
+        <th>Actual</th>
+        <th>Week 4</th>
+        <th>Actual</th>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Set 1</td>
+        <td><%= "#{@schedule.try(:week1)[0][:expected]} " + @unit %> x 5</td>
+        <td>
+          <%= text_field_tag :week1set1_weight, @schedule.try(:week1)[0][:actual][:weight], class: "input-mini" %> X
+          <%= text_field_tag :week1set1_rep, @schedule.try(:week1)[0][:actual][:rep], class: "input-mini" %>
+        </td>
+        <td><%= "#{@schedule.try(:week2)[0][:expected]} " + @unit %> x 3</td>
+        <td>
+          <%= text_field_tag :week2set1_weight, @schedule.try(:week2)[0][:actual][:weight], class: "input-mini" %> X
+          <%= text_field_tag :week2set1_rep, @schedule.try(:week2)[0][:actual][:rep], class: "input-mini" %>
+        </td>
+        <td><%= "#{@schedule.try(:week3)[0][:expected]} " + @unit %> x 5</td>
+        <td>
+          <%= text_field_tag :week3set1_weight, @schedule.try(:week3)[0][:actual][:weight], class: "input-mini" %> X
+          <%= text_field_tag :week3set1_rep, @schedule.try(:week3)[0][:actual][:rep], class: "input-mini" %>
+        </td>
+        <td><%= "#{@schedule.try(:week4)[0][:expected]} " + @unit %> x 5</td>
+        <td>
+          <%= text_field_tag :week4set1_weight, @schedule.try(:week4)[0][:actual][:weight], class: "input-mini" %> X
+          <%= text_field_tag :week4set1_rep, @schedule.try(:week4)[0][:actual][:rep], class: "input-mini" %>
+        </td>
+      </tr>
+      <tr>
+        <td>Set 2</td>
+        <td><%= "#{@schedule.try(:week1)[1][:expected]} " + @unit %> x 5</td>
+        <td>
+          <%= text_field_tag :week1set2_weight, @schedule.try(:week1)[1][:actual][:weight], class: "input-mini" %> X
+          <%= text_field_tag :week1set2_rep, @schedule.try(:week1)[1][:actual][:rep], class: "input-mini" %>
+        </td>
+        <td><%= "#{@schedule.try(:week2)[1][:expected]} " + @unit %> x 3</td>
+        <td>
+          <%= text_field_tag :week2set2_weight, @schedule.try(:week2)[1][:actual][:weight], class: "input-mini" %> X
+          <%= text_field_tag :week2set2_rep, @schedule.try(:week2)[1][:actual][:rep], class: "input-mini" %>
+        </td>
+        <td><%= "#{@schedule.try(:week3)[1][:expected]} " + @unit %> x 3</td>
+        <td>
+          <%= text_field_tag :week3set2_weight, @schedule.try(:week3)[1][:actual][:weight], class: "input-mini" %> X
+          <%= text_field_tag :week3set2_rep, @schedule.try(:week3)[1][:actual][:rep], class: "input-mini" %>
+        </td>
+        <td><%= "#{@schedule.try(:week4)[1][:expected]} " + @unit %> x 5</td>
+        <td>
+          <%= text_field_tag :week4set2_weight, @schedule.try(:week4)[1][:actual][:weight], class: "input-mini" %> X
+          <%= text_field_tag :week4set2_rep, @schedule.try(:week4)[1][:actual][:rep], class: "input-mini" %>
+        </td>
+      </tr>
+      <tr>
+        <td>Set 3</td>
+        <td><%= "#{@schedule.try(:week1)[2][:expected]} " + @unit %> x 5+</td>
+        <td>
+          <%= text_field_tag :week1set3_weight, @schedule.try(:week1)[2][:actual][:weight], class: "input-mini" %> X
+          <%= text_field_tag :week1set3_rep, @schedule.try(:week1)[2][:actual][:rep], class: "input-mini" %>
+        </td>
+        <td><%= "#{@schedule.try(:week2)[2][:expected]} " + @unit %> x 3+</td>
+        <td>
+          <%= text_field_tag :week2set3_weight, @schedule.try(:week2)[2][:actual][:weight], class: "input-mini" %> X
+          <%= text_field_tag :week2set3_rep, @schedule.try(:week2)[2][:actual][:rep], class: "input-mini" %>
+        </td>
+        <td><%= "#{@schedule.try(:week3)[2][:expected]} " + @unit %> x 1+</td>
+        <td>
+          <%= text_field_tag :week3set3_weight, @schedule.try(:week3)[2][:actual][:weight], class: "input-mini" %> X
+          <%= text_field_tag :week3set3_rep, @schedule.try(:week3)[2][:actual][:rep], class: "input-mini" %>
+        </td>
+        <td><%= "#{@schedule.try(:week4)[2][:expected]} " + @unit %> x 5</td>
+        <td>
+          <%= text_field_tag :week4set3_weight, @schedule.try(:week4)[2][:actual][:weight], class: "input-mini" %> X
+          <%= text_field_tag :week4set3_rep, @schedule.try(:week4)[2][:actual][:rep], class: "input-mini" %>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
   <%= submit_tag :Update, class: "btn btn-primary btn-large" -%>
 <% end -%>

@@ -6,7 +6,7 @@ gem 'rails'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'thin'
-gem 'twitter-bootstrap-rails'
+gem 'anjlab-bootstrap-rails', require: 'bootstrap-rails', github: 'anjlab/bootstrap-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'sorcery'
 gem 'jquery-datatables-rails'
@@ -25,4 +25,5 @@ end
 
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
 end
