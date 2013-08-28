@@ -2,7 +2,7 @@
 # The default is nothing which will include only core features (password encryption, login/logout).
 # Available submodules are: :user_activation, :http_basic_auth, :remember_me,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging, :external
-Rails.application.config.sorcery.submodules = [:reset_password, :external]
+Rails.application.config.sorcery.submodules = [:external, :reset_password]
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
@@ -83,10 +83,10 @@ Rails.application.config.sorcery.configure do |config|
   # Twitter wil not accept any requests nor redirect uri containing localhost,
   # make sure you use 0.0.0.0:3000 to access your app in development
   #
-  config.twitter.key = "hVziP775cib720coqMHUdg"
-  config.twitter.secret = "JF1do0emQW78cxOHGQ4HTnxorxhncHYCsx4ZaagBQ"
+  config.twitter.key = "2Tjx6TNSMefFKVrTE7l2g"
+  config.twitter.secret = "fFlJELGNSOmHxOwf7vuaggPf2qSOVPeyYmzMAqvk4A"
   config.twitter.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=twitter"
-  config.twitter.user_info_mapping = {:username => "name"}
+  config.twitter.user_info_mapping = {:username => "screen_name"}
   #
   config.facebook.key = "161321424059025"
   config.facebook.secret = "00c4c54780f414b27c5b301ff60765ab"

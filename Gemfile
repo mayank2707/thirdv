@@ -17,6 +17,7 @@ group :assets do
   gem 'coffee-rails'
   gem 'uglifier'
   gem 'therubyracer', :platforms => :ruby
+  gem 'font-awesome-rails'
 end
 
 group :development, :test do
@@ -27,3 +28,5 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+
+gem 'debugger'
