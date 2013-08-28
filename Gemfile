@@ -6,6 +6,7 @@ gem 'rails'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'thin'
+gem "twitter-bootstrap-rails"
 gem 'anjlab-bootstrap-rails', require: 'bootstrap-rails', github: 'anjlab/bootstrap-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'sorcery'
