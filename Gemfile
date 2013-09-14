@@ -9,7 +9,7 @@ gem 'thin'
 gem "twitter-bootstrap-rails"
 gem 'anjlab-bootstrap-rails', require: 'bootstrap-rails', github: 'anjlab/bootstrap-rails'
 gem 'bootstrap-datepicker-rails'
-gem 'sorcery'
+gem 'sorcery', "~> 0.8.2"
 gem 'jquery-datatables-rails'
 
 group :assets do
@@ -23,6 +23,10 @@ end
 
 group :development, :test do
   gem 'sqlite3'
+  # gem 'mysql2'
+  gem 'pry'
+  gem 'pry-debugger'
+  gem 'pry-rails'
 end
 
 group :production do
